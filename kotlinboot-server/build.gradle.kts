@@ -1,6 +1,6 @@
 buildscript {
-	val springBootVersion = "1.4.2.RELEASE"
-	val kotlinVersion = "1.0.5-2"
+	val springBootVersion = "1.5.3.RELEASE"
+	val kotlinVersion = "1.1.2-4"
 	extra["kotlinVersion"] = kotlinVersion
 
 	repositories {
@@ -41,12 +41,28 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	compile("org.springframework.boot:spring-boot-starter-jersey")
 	compile("org.springframework.boot:spring-boot-starter-data-cassandra") // for now Cassandra 2.X.X
-	compile("org.springframework.hateoas:spring-hateoas:0.21.0.RELEASE")
+	//compile("org.springframework.boot:spring-boot-starter-data-redis")
+
+    compile("org.springframework.hateoas:spring-hateoas:0.21.0.RELEASE")  // TODO: why not 'org.springframework.boot:spring-boot-starter-hateoas' ?
 	compile("org.springframework.boot:spring-boot-starter-data-rest")
 	compile("com.h2database:h2")
-	compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.4")
-	testCompile("org.spockframework:spock-spring:1.0-groovy-2.4")
+	compile("com.fasterxml.jackson.module:jackson-module-kotlin:2+") // 2.9.0.pr3
+	testCompile("org.spockframework:spock-spring:1+")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
-	testCompile("org.cassandraunit:cassandra-unit-spring:2.1.9.2")
+	testCompile("org.cassandraunit:cassandra-unit-spring:2+")
 }
+
+// if you get "input line is tool ong error, replace line "set CLASSPATH=..." to "set CLASSPATH=%APP_HOME%\lib\*" in bat file
+// or fix startScripts: replace set CLASSPATH
+//startScripts {
+//	//classpath += files('src/dist/XxxAPlaceHolderForAConfigxxX')
+//	// Properties in config folder will override properties packed into jar
+//	//classpath = files('src/dist/XxxAPlaceHolderForAConfigxxX') + classpath
+//	doLast {
+//		def windowsScriptFile = file getWindowsScript()
+//		def unixScriptFile    = file getUnixScript()
+//		windowsScriptFile.text = windowsScriptFile.text.replace('%APP_HOME%\\lib\\XxxAPlaceHolderForAConfigxxX', '%APP_HOME%\\config')
+//		unixScriptFile.text  = unixScriptFile.text.replace('$APP_HOME/lib/XxxAPlaceHolderForAConfigxxX', '$APP_HOME/config')
+//	}
+//}
 

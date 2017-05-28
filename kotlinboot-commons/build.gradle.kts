@@ -1,5 +1,5 @@
 buildscript {
-    val kotlinVersion = "1.0.5-2"
+    val kotlinVersion = "1.1.2-4"
     extra["kotlinVersion"] = kotlinVersion
 
     repositories {
@@ -26,5 +26,5 @@ val kotlinVersion = extra["kotlinVersion"] as String
 
 dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
-    compile("javax.ws.rs:javax.ws.rs-api:2.0.1")
+    compile("javax.ws.rs:javax.ws.rs-api:2+")
 }

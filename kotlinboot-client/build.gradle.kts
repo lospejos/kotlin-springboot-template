@@ -1,9 +1,9 @@
 import org.springframework.boot.gradle.repackage.RepackageTask
 
 buildscript {
-    val springBootVersion = "1.4.2.RELEASE"
+    val springBootVersion = "1.5.3.RELEASE"
+    val kotlinVersion = "1.1.2-4"
     extra["springBootVersion"] = springBootVersion
-    val kotlinVersion = "1.0.5-2"
     extra["kotlinVersion"] = kotlinVersion
 
     repositories {
